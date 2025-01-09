@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospectiva para Políticas y Planes del Sinaplan | CEPLAN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <style>
+        .bg-future-gradient {
+            background: linear-gradient(135deg, #0A2647 0%, #144272 50%, #205295 100%);
+        }
+        .text-future-gradient {
+            background: linear-gradient(135deg, #2C74B3 0%, #5DA7DB 50%, #9AD0EC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="font-['Poppins',sans-serif] bg-gray-50 text-gray-800">
+    <header x-data="{ isOpen: false }" class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-md shadow-md">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://www.ceplan.gob.pe/wp-content/uploads/2020/07/logo-ceplan-azul.png" alt="CEPLAN Logo" class="h-12 mr-4">
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition duration-300">Acerca del Curso</a>
+                    <a href="#modules" class="text-gray-700 hover:text-blue-600 transition duration-300">Módulos</a>
+                    <a href="#methodology" class="text-gray-700 hover:text-blue-600 transition duration-300">Metodología</a>
+                    <a href="#benefits" class="text-gray-700 hover:text-blue-600 transition duration-300">Beneficios</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition duration-300">Testimonios</a>
+                    <a href="#faq" class="text-gray-700 hover:text-blue-600 transition duration-300">FAQ</a>
+                    <button @click="$dispatch('open-enroll-modal')" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">Inscríbete Ahora</button>
+                </div>
+                <button @click="isOpen = !isOpen" class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div x-show="isOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform scale-90" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-90" class="md:hidden mt-4" x-cloak>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">Acerca del Curso</a>
+                <a href="#modules" class="block py-2 text-gray-700 hover:text-blue-600">Módulos</a>
+                <a href="#methodology" class="block py-2 text-gray-700 hover:text-blue-600">Metodología</a>
+                <a href="#benefits" class="block py-2 text-gray-700 hover:text-blue-600">Beneficios</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 hover:text-blue-600">Testimonios</a>
+                <a href="#faq" class="block py-2 text-gray-700 hover:text-blue-600">FAQ</a>
+                <button @click="$dispatch('open-enroll-modal')" class="block w-full text-left py-2 text-blue-600 font-semibold">Inscríbete Ahora</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="min-h-screen flex items-center justify-center bg-future-gradient">
+            <div class="container mx-auto px-6 py-20 md:flex items-center justify-between">
+                <div class="md:w-1/2 text-white mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-8 animate-fade-in-down">Prospectiva para Políticas y Planes del Sinaplan</h1>
+                    <p class="text-xl mb-12 animate-fade-in-up">Fortalece tus capacidades en la aplicación de métodos y técnicas prospectivas para el diseño y formulación de políticas y planes estratégicos en el marco del Sinaplan.</p>
+                    <button @click="$dispatch('open-enroll-modal')" class="bg-white text-blue-600 py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-100 transition duration-300 animate-pulse">Comienza tu viaje hacia el futuro estratégico</button>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">Acerca del Curso</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-600">Fundamentación y Relevancia</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 mr-2 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Esencial para la planificación gubernamental y toma de decisiones a largo plazo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 mr-2 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Basado en la Directiva General de Planeamiento Estratégico del Sinaplan (2024)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 mr-2 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Alineado con el Plan Estratégico de Desarrollo Nacional al 2050</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-600">Detalles del Curso</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span><strong>Duración:</strong> 16 horas académicas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                                <span><strong>Modalidad:</strong> MOOC (Curso Online Masivo y Abierto)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span><strong>Certificación:</strong> Constancia de participación al aprobar</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <span><strong>Dirigido a:</strong> Operadores del Sinaplan y público interesado</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="modules" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">Módulos del Curso</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-600">Módulo 1: Fundamentos teóricos de prospectiva</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 mr-2 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Introducción a la prospectiva y su importancia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 mr-2 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="rounUnderstood. I'll continue the text stream from the cut-off point:
+
+currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Evolución histórica del pensamiento prospectivo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 mr-2 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Planeamiento y Prospectiva en el Sinaplan</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-600">Módulo 2: Aplicación de la prospectiva</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 mr-2 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Métodos prospectivos en el Sinaplan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 mr-2 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Rutas metodológicas prospectivas para los instrumentos del Sinaplan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 mr-2 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Principales métodos y técnicas de prospectiva</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">Metodología</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-600">Enfoque Constructivista</h3>
+                        <p>Construcción activa del conocimiento a través de la exploración, el diálogo y la colaboración.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-600">Aprendizaje Significativo</h3>
+                        <p>Conexión de nuevos conocimientos con experiencias previas y aplicación en contextos reales.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-600">Modelo Andragógico</h3>
+                        <p>Enfoque educativo adaptado a las necesidades y experiencias de aprendizaje de adultos profesionales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">Beneficios del Curso</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">Anticipación Estratégica</h3>
+                        <p>Desarrolla la capacidad de anticipar cambios y prepararte para múltiples futuros posibles.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">Toma de Decisiones Informada</h3>
+                        <p>Mejora tu capacidad para tomar decisiones basadas en análisis prospectivos sólidos.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">Alineación con Objetivos Nacionales</h3>
+                        <p>Aprende a alinear tus estrategias con el Plan Estratégico de Desarrollo Nacional al 2050.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">Preguntas Frecuentes</h2>
+                <div class="space-y-4" x-data="faqAccordion()">
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="w-full p-4 text-left focus:outline-none" @click="toggle(1)">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">¿Cuáles son los requisitos para inscribirse en el curso?</span>
+                                <svg class="h-6 w-6 text-gray-500" :class="{'rotate-180': selected === 1}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="p-4 bg-gray-50" x-show="selected === 1" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-y-90" x-transition:enter-end="opacity-100 transform scale-y-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-y-100" x-transition:leave-end="opacity-0 transform scale-y-90">
+                            <p>No hay requisitos específicos para inscribirse en el curso. Está abierto a todos los profesionales interesados en la prospectiva y el planeamiento estratégico, especialmente a aquellos que trabajan en el sector público.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="w-full p-4 text-left focus:outline-none" @click="toggle(2)">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">¿Cómo se obtiene la certificación del curso?</span>
+                                <svg class="h-6 w-6 text-gray-500" :class="{'rotate-180': selected === 2}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="p-4 bg-gray-50" x-show="selected === 2" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-y-90" x-transition:enter-end="opacity-100 transform scale-y-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-y-100" x-transition:leave-end="opacity-0 transform scale-y-90">
+                            <p>Para obtener la certificación, debes completar todas las actividades del curso y aprobar la evaluación final con una nota mínima de 14 sobre 20. Una vez aprobado, recibirás una constancia de participación emitida por CEPLAN.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="w-full p-4 text-left focus:outline-none" @click="toggle(3)">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">¿Cuánto tiempo tengo para completar el curso?</span>
+                                <svg class="h-6 w-6 text-gray-500" :class="{'rotate-180': selected === 3}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="p-4 bg-gray-50" x-show="selected === 3" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-y-90" x-transition:enter-end="opacity-100 transform scale-y-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-y-100" x-transition:leave-end="opacity-0 transform scale-y-90">
+                            <p>El curso está diseñado para ser completado en 16 horas académicas, pero tienes flexibilidad para avanzar a tu propio ritmo. Se recomienda completarlo dentro de un período de 4 semanas para aprovechar al máximo el contenido y las actividades.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-20 bg-future-gradient">
+            <div class="container mx-auto px-6 text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">¿Listo para moldear el futuro del Perú?</h2>
+                <p class="text-xl mb-12 max-w-3xl mx-auto">Inscríbete ahora y comienza tu viaje hacia la excelencia en prospectiva estratégica. Fortalece tus capacidades para diseñar políticas y planes que impulsen el desarrollo sostenible del país.</p>
+                <button @click="$dispatch('open-enroll-modal')" class="bg-white text-blue-600 py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-100 transition duration-300">Comenzar el curso</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <img src="https://www.ceplan.gob.pe/wp-content/uploads/2020/07/logo-ceplan-azul.png" alt="CEPLAN Logo" class="h-16 invert">
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="mb-2">&copy; 2025 Centro Nacional de Planeamiento Estratégico. Todos los derechos reservados.</p>
+                    <p>Contacto: <a href="mailto:dnpe@ceplan.gob.pe" class="text-blue-400 hover:underline">dnpe@ceplan.gob.pe</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Inscripción -->
+    <div x-data="{ open: false }" x-show="open" x-on:open-enroll-modal.window="open = true" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed z-50 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-cloak>
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-2xl leading-6 font-medium text-gray-900" id="modal-title">
+                                Proceso de Inscripción
+                            </h3>
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-500 mb-4">
+                                    Antes de inscribirte, por favor sigue estos pasos:
+                                </p>
+                                <ol class="list-decimal list-inside text-sm text-gray-700 mb-4">
+                                    <li class="mb-2">Mira el video de introducción al curso <a href="#" class="text-blue-600 hover:underline">aquí</a>.</li>
+                                    <li class="mb-2">Lee el documento de requisitos y expectativas del curso <a href="#" class="text-blue-600 hover:underline">aquí (PDF)</a>.</li>
+                                    <li>Una vez completados los pasos anteriores, estarás listo para inscribirte.</li>
+                                </ol>
+                                <a href="https://inscripcion.ceplan.gob.pe" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+                                    Ir a la página de inscripción
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" @click="open = false" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
